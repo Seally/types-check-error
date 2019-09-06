@@ -15,7 +15,7 @@
     "chai": "^4.2.0",
     "check-error": "^1.0.2",
     "dts-gen": "^0.5.8",
-    "dtslint": "^0.9.3",
+    "dtslint": "^0.9.6",
     "mocha": "^6.2.0",
     "prettier": "^1.18.2",
     "ts-node": "^8.3.0",

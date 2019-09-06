@@ -15,3 +15,16 @@ Chai assertion library still depends on it as of v4.2.0.
 _Code repository:_ <https://github.com/chaijs/check-error>
 
 _NPM entry:_ <https://www.npmjs.com/package/check-error>
+
+## Notes
+
+On Windows, if you want `dtslint` to stop complaining about the lack of NPM
+packages with a matching name, you need to:
+
+1. Add `curl` to the `PATH`.
+2. Monkey patch the `download-file-sync` package in `node_modules` by adding
+   `--ssl-no-revoke` to the list of arguments passed by `child_process` to
+   `curl`.
+
+If this really annoys you, create an issue regarding this to
+[`dts-critic`](https://github.com/sandersn/dts-critic).
