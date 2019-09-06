@@ -8,6 +8,7 @@
     "lint": "dtslint types check-error",
     "test": "mocha"
   },
+  "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.1",
     "@types/mocha": "^5.2.7",
@@ -22,8 +23,5 @@
     "tslint": "^5.19.0",
     "typescript": "^3.6.2"
   },
-  "types": "./types/check-error/index.d.ts",
-  "dependencies": {
-    "electron-store": "^4.0.0"
-  }
+  "types": "./types/check-error/index.d.ts"
 }
