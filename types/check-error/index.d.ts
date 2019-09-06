@@ -1,5 +1,5 @@
 // Type definitions for check-error 1.0
-// Project: https://github.com/chaijs/check-error#readme
+// Project: https://github.com/chaijs/check-error
 // Definitions by: Porama Ruengrairatanaroj <https://github.com/Seally>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
