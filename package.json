@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "files": [
+      "types/**/*.d.ts"
+  ],
   "scripts": {
     "format": "prettier --write **/*.ts",
     "lint": "dtslint types check-error",
