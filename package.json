@@ -1,0 +1,29 @@
+{
+  "name": "@types/check-error",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "format": "prettier --write **/*.ts",
+    "lint": "dtslint types check-error",
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.1",
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.7.4",
+    "chai": "^4.2.0",
+    "check-error": "^1.0.2",
+    "dts-gen": "^0.5.8",
+    "dtslint": "^0.9.3",
+    "mocha": "^6.2.0",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.19.0",
+    "typescript": "^3.6.2"
+  },
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "electron-store": "^4.0.0"
+  }
+}

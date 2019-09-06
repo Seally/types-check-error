@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "moduleResolution": "node",
+        "paths": {
+            "check-error": [ "types/check-error" ],
+            "*": [ "node_modules/*" ]
+        },
+        "strict": true
+    }
+}
