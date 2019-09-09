@@ -18,11 +18,9 @@ const customError = new CustomError();
 // $ExpectType boolean
 checkError.compatibleInstance(errorInstance, sameInstance);
 checkError.compatibleInstance(errorInstance, otherInstance);
-checkError.compatibleInstance(errorInstance, Error);
 
 checkError.compatibleInstance(customError, errorInstance);
 checkError.compatibleInstance(errorInstance, customError);
-checkError.compatibleInstance(CustomError, TypeError);
 
 // compatibleConstructor()
 // $ExpectType boolean
@@ -37,7 +35,6 @@ checkError.compatibleConstructor(errorInstance, TypeError);
 
 checkError.compatibleConstructor(customError, errorInstance);
 checkError.compatibleConstructor(errorInstance, customError);
-checkError.compatibleConstructor(CustomError, TypeError);
 
 // compatibleMessage()
 // $ExpectType boolean
@@ -45,15 +42,12 @@ checkError.compatibleMessage(errorInstance, /instance$/);
 checkError.compatibleMessage(derivedInstance, /Error$/);
 checkError.compatibleMessage(errorInstance, /unicorn$/);
 checkError.compatibleMessage(derivedInstance, /dinosaur$/);
+checkError.compatibleMessage(customError, /dinosaur$/);
 
 checkError.compatibleMessage(errorInstance, 'instance');
 checkError.compatibleMessage(derivedInstance, 'Error');
 checkError.compatibleMessage(errorInstance, 'unicorn');
 checkError.compatibleMessage(derivedInstance, 'dinosaur');
-
-checkError.compatibleMessage(Error, '');
-checkError.compatibleMessage(TypeError, '');
-checkError.compatibleMessage(CustomError, /abc/);
 checkError.compatibleMessage(customError, 'def');
 
 // constructorName()
@@ -75,6 +69,3 @@ checkError.getMessage(errorInstance);
 checkError.getMessage(derivedInstance);
 
 checkError.getMessage(thrownMessage);
-
-checkError.getMessage(Error);
-checkError.getMessage(TypeError);

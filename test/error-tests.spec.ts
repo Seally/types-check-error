@@ -4,13 +4,16 @@ import { expect } from 'chai';
 import * as checkError from 'check-error';
 
 describe('checkError', function() {
+    it('check-error-tests.ts should run without errors', () => {
+        require('../types/check-error/check-error-tests');
+    });
+
     it('compatibleInstance', function() {
         const errorInstance = new Error('I am an instance');
         const sameInstance = errorInstance;
         const otherInstance = new Error('I an another instance');
         expect(checkError.compatibleInstance(errorInstance, sameInstance)).to.be.true;
         expect(checkError.compatibleInstance(errorInstance, otherInstance)).to.be.false;
-        expect(checkError.compatibleInstance(errorInstance, Error)).to.be.false;
     });
 
     it('compatibleConstructor', function() {
@@ -51,11 +54,8 @@ describe('checkError', function() {
     it('constructorName', function() {
         const errorInstance = new Error('I am an instance');
         const derivedInstance = new TypeError('I inherit from Error');
-        const thrownMessage = 'Imagine I have been thrown';
         expect(checkError.getConstructorName(errorInstance)).to.equal('Error');
         expect(checkError.getConstructorName(derivedInstance)).to.equal('TypeError');
-
-        expect(checkError.getConstructorName(thrownMessage)).to.equal('Imagine I have been thrown');
 
         expect(checkError.getConstructorName(Error)).to.equal('Error');
         expect(checkError.getConstructorName(TypeError)).to.equal('TypeError');

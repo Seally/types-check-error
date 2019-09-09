@@ -3,11 +3,14 @@
 // Definitions by: Porama Ruengrairatanaroj <https://github.com/Seally>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
-export type ErrorLike = Error | string | {
-    new (...args: any[]): Error
-} | {
-    (...args: any[]): Error
-};
+export type ErrorInstanceOrConstructor =
+    | Error
+    | {
+          new (...args: any[]): Error;
+      }
+    | {
+          (...args: any[]): Error;
+      };
 
 /**
  * Checks if two instances are compatible (strict equal).
@@ -15,10 +18,10 @@ export type ErrorLike = Error | string | {
  * Returns false if errorLike is not an instance of Error, because instances
  * can only be compatible if they're both error instances.
  *
- * @param thrown - error
- * @param errorLike - object to compare against
+ * @param thrown - thrown error
+ * @param errorLike - error object to compare against
  */
-export function compatibleInstance(thrown: ErrorLike, errorLike: ErrorLike): boolean;
+export function compatibleInstance(thrown: Error, errorLike: Error): boolean;
 
 /**
  * Checks if two constructors are compatible.
@@ -32,7 +35,7 @@ export function compatibleInstance(thrown: ErrorLike, errorLike: ErrorLike): boo
  * @param thrown - error
  * @param errorLike - object to compare against
  */
-export function compatibleConstructor(thrown: ErrorLike, errorLike: ErrorLike): boolean;
+export function compatibleConstructor(thrown: Error, errorLike: ErrorInstanceOrConstructor): boolean;
 
 /**
  * Checks if an error's message is compatible with a matcher (String or
@@ -41,10 +44,10 @@ export function compatibleConstructor(thrown: ErrorLike, errorLike: ErrorLike): 
  * If the message contains the String or passes the RegExp test,
  * it is considered compatible.
  *
- * @param thrown - error
+ * @param thrown - thrown error
  * @param errMatcher - string/regex to look for in the message
  */
-export function compatibleMessage(thrown: ErrorLike, errMatcher: string | RegExp): boolean;
+export function compatibleMessage(thrown: Error | string, errMatcher: string | RegExp): boolean;
 
 /**
  * Gets the error message from an error.
@@ -52,11 +55,11 @@ export function compatibleMessage(thrown: ErrorLike, errMatcher: string | RegExp
  * If `err` is a String itself, we return it.
  * If the error has no message, we return an empty string.
  *
- * @param errorLike
+ * @param err
  */
-export function getMessage(errorLike: ErrorLike): string;
+export function getMessage(err: Error | string): string;
 
 /**
  * Gets the constructor name for an Error instance or constructor itself.
  */
-export function getConstructorName(errorLike: ErrorLike): string;
+export function getConstructorName(errorLike: ErrorInstanceOrConstructor): string;
