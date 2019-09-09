@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "files": [
-      "types/**/*.d.ts"
+    "types/**/*.d.ts"
   ],
   "scripts": {
     "format": "prettier --write **/*.ts",
@@ -14,12 +14,16 @@
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.2.1",
+    "@types/gulp": "^4.0.6",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.7.4",
     "chai": "^4.2.0",
     "check-error": "^1.0.2",
+    "del": "^5.1.0",
     "dts-gen": "^0.5.8",
     "dtslint": "^0.9.6",
+    "gulp": "^4.0.2",
+    "gulp-git": "^2.9.0",
     "mocha": "^6.2.0",
     "prettier": "^1.18.2",
     "ts-node": "^8.3.0",
