@@ -1,34 +1,38 @@
 {
   "name": "@types/check-error",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "files": [
-    "types/**/*.d.ts"
+    "dist/**"
   ],
   "scripts": {
     "format": "prettier --write **/*.ts",
-    "lint": "dtslint types check-error",
-    "test": "mocha"
+    "lint": "dtslint .",
+    "test": "mocha",
+    "dist": "gulp dist",
+    "prepack": "yarn dist"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/chai": "^4.2.1",
+    "@types/chai": "*",
     "@types/gulp": "^4.0.6",
-    "@types/mocha": "^5.2.7",
-    "@types/node": "^12.7.4",
-    "chai": "^4.2.0",
+    "@types/mocha": "*",
+    "@types/node": "latest",
+    "@types/tar-stream": "^1.6.1",
+    "@types/undertaker": "^1.2.2",
+    "chai": "*",
     "check-error": "^1.0.2",
     "del": "^5.1.0",
     "dts-gen": "^0.5.8",
-    "dtslint": "^0.9.6",
+    "dtslint": "^0.9.8",
     "gulp": "^4.0.2",
     "gulp-git": "^2.9.0",
-    "mocha": "^6.2.0",
+    "mocha": "*",
     "prettier": "^1.18.2",
-    "ts-node": "^8.3.0",
-    "tslint": "^5.19.0",
-    "typescript": "^3.6.2"
+    "tar-stream": "^2.1.0",
+    "ts-node": "latest",
+    "tslint": "latest",
+    "typescript": "latest"
   },
   "types": "./types/check-error/index.d.ts"
 }
