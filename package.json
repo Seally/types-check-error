@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "format": "prettier --write **/*.ts",
-    "lint": "dtslint .",
+    "lint": "dtslint types/check-error",
     "test": "mocha",
     "dist": "gulp dist",
     "prepack": "yarn dist"

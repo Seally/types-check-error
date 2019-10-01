@@ -2,6 +2,7 @@
 // Project: https://github.com/chaijs/check-error
 // Definitions by: Porama Ruengrairatanaroj <https://github.com/Seally>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
+// TypeScript Version: 2.1
 
 export type ErrorInstanceOrConstructor =
     | Error
